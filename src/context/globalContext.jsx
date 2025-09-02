@@ -3,6 +3,7 @@ import { useReducer, useEffect } from "react";
 import {  onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebaseConfig";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const GlobalContext = createContext()
 
 const changeState = (state, action) => {
@@ -16,6 +17,7 @@ const changeState = (state, action) => {
          return state
    }
 }
+// eslint-disable-next-line react/prop-types
 export const GlobalContextProvider = ({children}) => {
 const [state, dispatch] = useReducer(changeState, {})
 

@@ -14,7 +14,6 @@ export const useLogin = () => {
          toast.success("Login successful")
         })
         .catch((error) => {
-          const errorCode = error.code;
           const errorMessage = error.message;
           toast.error("Error: " + errorMessage)
         });

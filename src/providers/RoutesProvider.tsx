@@ -4,7 +4,7 @@ import {useRoutes} from '../routes/routes'
 export const RoutesProvider = () => {
   return (
    <Suspense fallback={<div>Loading</div>}>
-      <RouterProvider router={createBrowserRouter(useRoutes())}/>
+      <RouterProvider router={createBrowserRouter(useRoutes().filter((route): route is NonNullable<typeof route> => route !== undefined))}/>
    </Suspense>
   )
 }

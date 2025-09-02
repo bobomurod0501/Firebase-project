@@ -4,19 +4,18 @@ import { toast } from "sonner";
 
 export const useFiresrore = () => {
   const addDocument = (data, collectionName) => {
-   addDoc(collection(db, collectionName), data)
-     .then(() => {
-       console.log("Document successfully written!");
-     })
-     .catch((error) => {
-       console.error("Error writing document: ", error);
-     });
+    addDoc(collection(db, collectionName), data)
+      .then(() => {
+        toast.success("Transaction added successfully");
+      })
+      .catch((error) => {
+        toast.error("Error adding document: ", error);
+      });
   };
   const deleteDocument = (id, collectionName) => {
     deleteDoc(doc(db, collectionName, id))
       .then(() => {
-            toast.success("Transaction deleted successfully");
-
+        toast.success("Transaction deleted successfully");
       })
       .catch((error) => {
         toast.error("Error removing document: ", error);

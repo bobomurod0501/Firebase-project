@@ -4,6 +4,7 @@ import { auth } from "../firebase/firebaseConfig";
 
 export const useSignup = () => {
    const signup = (displayName, email, password) => {
+      console.log(displayName, email, password);
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
