@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import styles from "../components/Navbar.module.css"
+import styles from "./Navbar.module.css"
 import { useGlobalContexts } from '../hooks/useGlobalContexts';
 import { useSignout } from '../hooks/useSignout';
 
